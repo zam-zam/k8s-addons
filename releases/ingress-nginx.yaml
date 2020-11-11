@@ -16,10 +16,8 @@ spec:
     controller:
       kind: DaemonSet
       hostNetwork: true
-      hostPort:
-        enabled: true
       service:
-        enabled: false
+        type: ""
       tolerations:
         - key: node-role.kubernetes.io/front
           effect: NoSchedule

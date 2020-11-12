@@ -12,6 +12,9 @@ spec:
     repository: https://kubernetes.github.io/ingress-nginx
     name: ingress-nginx
     version: 3.9.0
+  rollback:
+    enable: true
+    force: true
   valuesFrom:
     - configMapKeyRef:
         name: k8s-addons

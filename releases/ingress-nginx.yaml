@@ -12,6 +12,12 @@ spec:
     repository: https://kubernetes.github.io/ingress-nginx
     name: ingress-nginx
     version: 3.9.0
+  valuesFrom:
+    - configMapKeyRef:
+        name: k8s-addons
+        namespace: flux
+        key: values.yaml
+        optional: false
   values:
     controller:
       kind: DaemonSet

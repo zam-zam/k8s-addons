@@ -12,6 +12,12 @@ spec:
     repository: https://prometheus-community.github.io/helm-charts
     name: kube-prometheus-stack
     version: 11.1.1
+  valuesFrom:
+    - configMapKeyRef:
+        name: k8s-addons
+        namespace: flux
+        key: values.yaml
+        optional: false
   values:
     defaultRules:
       create: false
@@ -30,6 +36,13 @@ spec:
             effect: NoSchedule
         nodeSelector:
           node-role.kubernetes.io/system: ""
+      ingress:
+        enabled: true
+        hosts:
+          - {{ tpl .Values.kubeDomain . }}
+        tls:
+          - hosts:
+              - {{ tpl .Values.kubeDomain . }}
     alertmanager:
       enabled: true
       alertmanagerSpec:

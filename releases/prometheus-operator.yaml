@@ -22,6 +22,8 @@ spec:
         key: values.yaml
         optional: false
   values:
+    commonLabels:
+      scmhash: abc123
     kubeDomain: "some.domain"
     defaultRules:
       create: false

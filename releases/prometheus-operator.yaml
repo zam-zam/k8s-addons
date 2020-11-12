@@ -22,9 +22,6 @@ spec:
         key: values.yaml
         optional: false
   values:
-    commonLabels:
-      scmhash: abc123
-    kubeDomain: "some.domain"
     defaultRules:
       create: false
     prometheusOperator:
@@ -42,13 +39,6 @@ spec:
             effect: NoSchedule
         nodeSelector:
           node-role.kubernetes.io/system: ""
-      ingress:
-        enabled: true
-        hosts:
-          - {{ tpl .Values.kubeDomain . }}
-        tls:
-          - hosts:
-              - {{ tpl .Values.kubeDomain . }}
     alertmanager:
       enabled: true
       alertmanagerSpec:

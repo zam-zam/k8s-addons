@@ -1,0 +1,25 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: podinfo-dev
+  namespace: dev
+  annotations:
+    fluxcd.io/automated: "false"
+spec:
+  releaseName: podinfo-dev
+  chart:
+    git: git@github.com:fluxcd/helm-operator-get-started
+    path: charts/podinfo
+    ref: master
+  valuesFrom:
+    - configMapKeyRef:
+        name: k8s-addons
+        namespace: zamolodchikov
+        key: values.yaml
+        optional: true
+  values:
+    image:
+      repository: stefanprodan/podinfo
+      tag: dev-kb9lm91e
+    replicaCount: 1
+

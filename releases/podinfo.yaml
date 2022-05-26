@@ -15,10 +15,10 @@ spec:
     - configMapKeyRef:
         name: k8s-addons
         namespace: zamolodchikov
-        key: values.yaml
+        key: podinfo.yaml
         optional: false
     - configMapKeyRef:
         name: k8s-addons-custom
         namespace: zamolodchikov
-        key: values.yaml
+        key: podinfo.yaml
         optional: true

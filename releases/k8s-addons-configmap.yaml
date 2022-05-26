@@ -1,0 +1,20 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: k8s-addons-configmap
+  namespace: zamolodchikov
+  annotations:
+    fluxcd.io/automated: "false"
+spec:
+  releaseName: k8s-addons-configmap
+  chart: .charts/configmaps
+  values:
+    configMap:
+      k8s-addons:
+        data:
+          podinfo.yaml: |
+            image:
+              tag: 6.1.0
+      k8s-addons-custom:
+        data:
+

@@ -2,7 +2,7 @@ apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
   name: podinfo-dev
-  namespace: dev
+  namespace: zamolodchikov
   annotations:
     fluxcd.io/automated: "false"
 spec:

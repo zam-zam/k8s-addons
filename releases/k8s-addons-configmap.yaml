@@ -8,6 +8,10 @@ metadata:
 spec:
   releaseName: k8s-addons-configmap
   chart: .charts/configmaps
+  chart:
+    git: https://github.com/zam-zam/helm-chart-configmap.git
+    path: .
+    ref: master
   values:
     configMap:
       k8s-addons:

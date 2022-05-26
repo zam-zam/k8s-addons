@@ -8,7 +8,7 @@ metadata:
 spec:
   releaseName: podinfo-dev
   chart:
-    git: git@github.com:fluxcd/helm-operator-get-started
+    git: https://github.com/fluxcd/helm-operator-get-started.git
     path: charts/podinfo
     ref: master
   valuesFrom:

@@ -16,10 +16,9 @@ spec:
         name: k8s-addons
         namespace: zamolodchikov
         key: values.yaml
+        optional: false
+    - configMapKeyRef:
+        name: k8s-addons-custom
+        namespace: zamolodchikov
+        key: values.yaml
         optional: true
-  values:
-    image:
-      repository: stefanprodan/podinfo
-      tag: 6.1.4
-    replicaCount: 1
-

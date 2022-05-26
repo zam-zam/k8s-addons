@@ -20,6 +20,6 @@ spec:
   values:
     image:
       repository: stefanprodan/podinfo
-      tag: dev-kb9lm91e
+      tag: 6.1.4
     replicaCount: 1
 
